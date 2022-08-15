@@ -1,5 +1,6 @@
 import { FC } from "react"
 import cn from "classnames"
+import { useNavigate } from "react-router-dom"
 
 interface ILogoProps {
     className?: string
@@ -7,11 +8,20 @@ interface ILogoProps {
 }
 
 export const Logo: FC<ILogoProps> = ({ className, withAuthor }) => {
-    const classes = cn("text-4xl font-semibold flex items-center", className)
+    const classes = cn(
+        "text-4xl font-semibold flex items-center cursor-pointer",
+        className
+    )
+
+    const navigate = useNavigate()
+
+    const handleLogoClick = () => {
+        navigate("/")
+    }
 
     return (
         <div className={"flex flex-col gap-2"}>
-            <span className={classes}>
+            <span onClick={handleLogoClick} className={classes}>
                 phrase
                 <span className={"text-blue-600"}>qr</span>
             </span>

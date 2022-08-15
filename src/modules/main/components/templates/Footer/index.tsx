@@ -15,8 +15,8 @@ export const Footer = () => {
                 </a>
             </span>
 
-            <span>
-                &copy;phraseqr {new Date().getFullYear()}, All Rights Reserved
+            <span className={"text-gray-400"}>
+                {new Date().getFullYear()} &copy;phraseqr
             </span>
         </footer>
     )

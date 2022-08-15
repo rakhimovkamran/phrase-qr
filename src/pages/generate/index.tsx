@@ -59,11 +59,11 @@ const GeneratePage = () => {
 
                 <Setting className={"mt-12"} title={"Title"}>
                     <Input
-                        maxLength={25}
                         onChange={(e: ChangeEvent<HTMLInputElement>) =>
                             setTitle(e.target.value)
                         }
                         placeholder={"E.g TON Wallet Phrases"}
+                        maxLength={25}
                     />
                 </Setting>
 
@@ -83,18 +83,18 @@ const GeneratePage = () => {
                 <Setting className={"mt-6"} title={"Words"}>
                     {words.map((word, idx) => (
                         <Input
-                            maxLength={15}
                             onChange={(e: ChangeEvent<HTMLInputElement>) =>
                                 handleWordEdit(idx, e.target.value)
                             }
+                            maxLength={15}
                             key={idx}
                         />
                     ))}
                     <button
+                        onClick={handleAddWord}
                         className={
                             "w-full h-12 bg-blue-500 rounded-lg text-white"
-                        }
-                        onClick={() => handleAddWord()}>
+                        }>
                         Add Word
                     </button>
                 </Setting>
@@ -109,7 +109,7 @@ const GeneratePage = () => {
                         </button>
 
                         <button
-                            onClick={() => handleQRDownload()}
+                            onClick={handleQRDownload}
                             className={
                                 "bg-blue-500 py-4 text-white rounded-lg"
                             }>
