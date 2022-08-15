@@ -1,34 +1,40 @@
+import { cards } from "modules/main/constants"
+
+import {
+    ParallaxCaption,
+    GetStarted,
+    Cards,
+    Footer,
+    Header,
+    Intro
+} from "modules/main/components/templates"
+
 const MainPage = () => {
     return (
         <main className={"flex flex-col"}>
-            <header className={"w-full absolute flex items-center h-32"}>
-                <section className={"container mx-auto"}>
-                    <h1
-                        className={
-                            "text-4xl font-semibold text-gray-800 flex items-center"
-                        }>
-                        phrase
-                        <span className={"text-blue-600"}>qr</span>
-                    </h1>
-                </section>
-            </header>
+            <Header />
+            <Intro />
 
-            <section
-                className={
-                    "container mx-auto h-screen flex items-center justify-center flex-col"
-                }>
-                <h1 className={"text-7xl text-center font-bold text-gray-800"}>
-                    Generate QR Code <br /> For your crypto <br />
-                    <span className={"text-blue-600"}>Passphrase</span>
-                </h1>
+            <ParallaxCaption speed={10} className={"bg-blue-500"}>
+                <h2 className={"text-7xl text-white font-bold"}>
+                    Don&apos;t write your{" "}
+                    <span className={"text-dark-800"}>passphrase</span> on a
+                    piece of paper
+                </h2>
+            </ParallaxCaption>
 
-                <button
-                    className={
-                        "px-12 py-3 rounded-xl transition-all hover:bg-blue-500 hover:text-white border-2 border-blue-500 mt-12"
-                    }>
-                    Get Started
-                </button>
-            </section>
+            <Cards cards={cards} />
+
+            <ParallaxCaption speed={10} className={"bg-yellow-300"}>
+                <h2 className={"text-7xl font-bold leading-tight"}>
+                    Don&apos;t worry, entire app is secured, we don&apos;t need
+                    your money, and we&apos;re not providing any info to others.
+                </h2>
+            </ParallaxCaption>
+
+            <GetStarted />
+
+            <Footer />
         </main>
     )
 }
