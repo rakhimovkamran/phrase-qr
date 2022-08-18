@@ -16,7 +16,10 @@ const MainPage = () => {
             <Intro />
 
             <ParallaxCaption speed={10} className={"bg-blue-500"}>
-                <h2 className={"text-7xl text-white font-bold"}>
+                <h2
+                    className={
+                        "text-4xl md:text-7xl px-4 md:px-0 text-white font-bold"
+                    }>
                     Don&apos;t write your{" "}
                     <span className={"text-dark-800"}>passphrase</span> on a
                     piece of paper
@@ -26,7 +29,10 @@ const MainPage = () => {
             <Cards cards={cards} />
 
             <ParallaxCaption speed={10} className={"bg-yellow-300"}>
-                <h2 className={"text-7xl font-bold leading-tight"}>
+                <h2
+                    className={
+                        "text-4xl md:text-7xl px-4 md:px-0 font-bold leading-tight"
+                    }>
                     Don&apos;t worry, entire app is secured, we don&apos;t need
                     your money, and we&apos;re not providing any info to others.
                 </h2>

@@ -2,7 +2,7 @@ export const Footer = () => {
     return (
         <footer
             className={
-                "py-24 border-t container mx-auto flex items-center justify-between"
+                "px-4 md:px-0 py-12 md:py-24 border-t container mx-auto flex items-center justify-between"
             }>
             <span>
                 Developed with ❤️ by{" "}

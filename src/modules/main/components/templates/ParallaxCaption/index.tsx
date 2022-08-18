@@ -21,7 +21,3 @@ export const ParallaxCaption: FC<IParallaxCaptionProps> = ({
         </section>
     )
 }
-;<h2 className={"text-7xl text-white font-bold"}>
-    Don&apos;t write your <span className={"text-dark-800"}>passphrase</span> on
-    a piece of paper
-</h2>

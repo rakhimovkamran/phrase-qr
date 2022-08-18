@@ -68,13 +68,13 @@ const GeneratePage = () => {
                 </Setting>
 
                 <Setting className={"mt-6"} title={"Choose theme"}>
-                    <section className={"flex gap-2"}>
-                        {Object.keys(themes).map((theme, idx) => (
+                    <section className={"grid grid-cols-5 gap-2"}>
+                        {Object.keys(themes).map((theme) => (
                             <ThemeButton
                                 onClick={(theme) => setSelectedTheme(theme)}
                                 selectedTheme={selectedTheme}
                                 theme={theme}
-                                key={idx}
+                                key={theme}
                             />
                         ))}
                     </section>
@@ -82,13 +82,19 @@ const GeneratePage = () => {
 
                 <Setting className={"mt-6"} title={"Words"}>
                     {words.map((word, idx) => (
-                        <Input
-                            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                                handleWordEdit(idx, e.target.value)
-                            }
-                            maxLength={15}
+                        <div
                             key={idx}
-                        />
+                            className={
+                                "flex items-center justify-between gap-2"
+                            }>
+                            <Input
+                                className={"w-full"}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                                    handleWordEdit(idx, e.target.value)
+                                }
+                                maxLength={15}
+                            />
+                        </div>
                     ))}
                     <button
                         onClick={handleAddWord}
@@ -121,14 +127,19 @@ const GeneratePage = () => {
 
             <section
                 className={
-                    "flex-1 bg-slate-100 flex items-center justify-center flex-col"
+                    "flex-1 bg-slate-100 flex items-center justify-between flex-col"
                 }>
+                <header
+                    className={
+                        "h-12 flex items-center justify-between"
+                    }></header>
                 <QRCard
                     theme={selectedTheme}
                     ref={QRCodeRef}
                     words={words}
                     title={title}
                 />
+                <footer></footer>
             </section>
         </main>
     )

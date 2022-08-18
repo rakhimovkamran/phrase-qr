@@ -5,10 +5,13 @@ export const Intro = () => {
     return (
         <section
             className={
-                "container mx-auto h-screen flex items-center justify-between"
+                "container mt-24 sm:mt-32 md:mt-48 lg:mt-0 mx-auto h-screen flex-col lg:flex-row flex items-center justify-center lg:justify-between"
             }>
-            <section>
-                <h1 className={"text-7xl font-bold leading-tight"}>
+            <section className={"flex items-center lg:items-start flex-col"}>
+                <h1
+                    className={
+                        "text-4xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl text-center lg:text-left font-bold leading-tight"
+                    }>
                     Generate QR Card <br /> For your crypto&apos;s <br />
                     <span className={"text-blue-600"}>Passphrase</span>
                 </h1>
@@ -16,11 +19,10 @@ export const Intro = () => {
                 <ActionButton>Create your own</ActionButton>
             </section>
 
-            <Parallax speed={15}>
+            <Parallax className={"mt-12"} speed={15}>
                 <img
-                    // TODO: Remove Magic Number
                     src={"./images/qr-cards/collage.png"}
-                    style={{ height: "450px" }}
+                    className={"h-full sm:h-350p xl:h-450p"}
                     alt={"qr-cards-collage"}
                 />
             </Parallax>

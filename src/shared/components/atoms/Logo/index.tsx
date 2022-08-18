@@ -1,6 +1,6 @@
 import { FC } from "react"
-import cn from "classnames"
 import { useNavigate } from "react-router-dom"
+import cn from "classnames"
 
 interface ILogoProps {
     className?: string
